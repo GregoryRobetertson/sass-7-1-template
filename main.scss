@@ -1,0 +1,17 @@
+// main.scss
+
+// Import base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Import components
+@import 'components/buttons';
+@import 'components/cards';
+
+// Import layout components
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+
+// Import utility mixins
+@import 'abstracts/mixins';

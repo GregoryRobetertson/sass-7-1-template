@@ -1,0 +1,51 @@
+// abstracts/_mixins.scss
+
+// Utility mixin for centering an element horizontally and vertically
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Utility mixin for clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Utility mixin for text ellipsis
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Utility mixin for flex container
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Utility mixin for flex item
+@mixin flex-item($flex: 1) {
+  flex: $flex;
+}
+
+// Utility mixin for responsive font-size based on viewport width
+@mixin responsive-font-size($min-size, $max-size, $min-viewport: 320px, $max-viewport: 1920px) {
+  font-size: $min-size;
+  @media screen and (min-width: $min-viewport) {
+    font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-viewport}) / (#{$max-viewport} - #{$min-viewport})));
+  }
+  @media screen and (min-width: $max-viewport) {
+    font-size: $max-size;
+  }
+}
+
+// Add more utility mixins as needed
